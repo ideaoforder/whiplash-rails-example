@@ -1,0 +1,80 @@
+<%= form_for @order_item, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :order_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :order_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sku, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sku, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :quantity, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :quantity, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :unshippable, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :unshippable, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :originator_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :originator_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :item_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :item_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :available, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :available, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :picked, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :picked, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :packed, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :packed, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :packaging, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :packaging, :class => 'check_box' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                order_items_path, :class => 'btn' %>
+  </div>
+<% end %>

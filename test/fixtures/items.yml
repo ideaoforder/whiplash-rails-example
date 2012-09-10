@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  sku: MyString
+  title: MyString
+  description: MyString
+  created_at: 2012-09-10 12:26:37
+  updated_at: 2012-09-10 12:26:37
+  quantity: 1
+  weight: 9.99
+  exp_quantity: 1
+  originator: MyString
+  originator_id: 1
+  available: false
+  image_file_name: MyString
+  image_updated_at: 2012-09-10 12:26:37
+  image_originator_url: MyString
+  vendor: MyString
+  price: 9.99
+  media_mail: false
+  packaging: false
+  length: 9.99
+  width: 9.99
+  height: 9.99
+
+two:
+  id: 1
+  sku: MyString
+  title: MyString
+  description: MyString
+  created_at: 2012-09-10 12:26:37
+  updated_at: 2012-09-10 12:26:37
+  quantity: 1
+  weight: 9.99
+  exp_quantity: 1
+  originator: MyString
+  originator_id: 1
+  available: false
+  image_file_name: MyString
+  image_updated_at: 2012-09-10 12:26:37
+  image_originator_url: MyString
+  vendor: MyString
+  price: 9.99
+  media_mail: false
+  packaging: false
+  length: 9.99
+  width: 9.99
+  height: 9.99

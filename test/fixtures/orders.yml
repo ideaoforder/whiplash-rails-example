@@ -1,0 +1,71 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  order_orig: MyString
+  shipping_company: MyString
+  shipping_address_1: MyString
+  shipping_address_2: MyString
+  shipping_city: MyString
+  shipping_state: MyString
+  shipping_zip: MyString
+  shipping_country: MyString
+  shipping_phone: MyString
+  email: MyString
+  ship_method: MyString
+  ship_actual_cost: MyString
+  shipped_on: MyString
+  tracking: MyString
+  ship_notes: MyText
+  created_at: 2012-09-10 11:58:15
+  updated_at: 2012-09-10 11:58:15
+  shipping_name: MyString
+  req_ship_method_code: MyString
+  req_ship_method_price: MyString
+  tracking_sent: false
+  originator_notified: false
+  originator: MyString
+  originator_id: 1
+  status: 1
+  ship_3rdparty_cost: 9.99
+  public_note: MyText
+  gift: false
+  billed: false
+  ship_3rdparty_account: MyString
+  ship_3rdparty_zip: MyString
+  ship_3rdparty_country: MyString
+
+two:
+  id: 1
+  order_orig: MyString
+  shipping_company: MyString
+  shipping_address_1: MyString
+  shipping_address_2: MyString
+  shipping_city: MyString
+  shipping_state: MyString
+  shipping_zip: MyString
+  shipping_country: MyString
+  shipping_phone: MyString
+  email: MyString
+  ship_method: MyString
+  ship_actual_cost: MyString
+  shipped_on: MyString
+  tracking: MyString
+  ship_notes: MyText
+  created_at: 2012-09-10 11:58:15
+  updated_at: 2012-09-10 11:58:15
+  shipping_name: MyString
+  req_ship_method_code: MyString
+  req_ship_method_price: MyString
+  tracking_sent: false
+  originator_notified: false
+  originator: MyString
+  originator_id: 1
+  status: 1
+  ship_3rdparty_cost: 9.99
+  public_note: MyText
+  gift: false
+  billed: false
+  ship_3rdparty_account: MyString
+  ship_3rdparty_zip: MyString
+  ship_3rdparty_country: MyString
