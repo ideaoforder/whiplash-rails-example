@@ -36,8 +36,8 @@
   <dd><%= @order.ship_notes %></dd>
   <dt><strong><%= model_class.human_attribute_name(:shipping_name) %>:</strong></dt>
   <dd><%= @order.shipping_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:req_ship_method_code) %>:</strong></dt>
-  <dd><%= @order.req_ship_method_code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:req_ship_method_text) %>:</strong></dt>
+  <dd><%= @order.req_ship_method_text %></dd>
   <dt><strong><%= model_class.human_attribute_name(:req_ship_method_price) %>:</strong></dt>
   <dd><%= @order.req_ship_method_price %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tracking_sent) %>:</strong></dt>
@@ -65,6 +65,46 @@
   <dt><strong><%= model_class.human_attribute_name(:ship_3rdparty_country) %>:</strong></dt>
   <dd><%= @order.ship_3rdparty_country %></dd>
 </dl>
+
+<h3>Order Items</h3>
+<table class="table table-striped">
+	<tr>
+		<th>Item</th>
+		<th>Orig. ID</th>
+		<th>SKU</th>
+		<th>Desc</th>
+		<th>Quantity</th>
+		<th>Price</th>
+		<th>Available?</th>
+		<th>Packaging?</th>
+		<th>Unshippable?</th>
+		<th>Created</th>
+		<th></th>
+	</tr>
+	<% for order_item in @order.order_items %>
+		<tr>
+			<td><%=link_to order_item.item_id, item_path(order_item.item_id) %></td>
+			<td><%=order_item.originator_id%></td>>
+			<td><%=order_item.sku%></td>
+			<td><%=order_item.description%></td>>
+			<td><%=order_item.quantity%></td>
+			<td><%=number_to_currency order_item.price%></td>
+			<td><%=order_item.available?%></td>
+			<td><%=order_item.packaging?%></td>
+			<td><%=order_item.unshippable?%></td>
+			<td><%=DateTime.parse(order_item.created_at)%></td>
+			<td>
+			  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+			              edit_order_item_path(order_item.id), :class => 'btn' %>
+			  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+			              order_item_path(order_item.id),
+			              :method => 'delete',
+			              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+			              :class => 'btn btn-danger' %>
+			</td>
+		</tr>
+	<% end %>
+</table>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
