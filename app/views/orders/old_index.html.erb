@@ -1,0 +1,86 @@
+<%- model_class = Order -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:order_orig) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_company) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_address_1) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_address_2) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_city) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_state) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_zip) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_country) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_phone) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:ship_method) %></th>
+      <th><%= model_class.human_attribute_name(:ship_actual_cost) %></th>
+      <th><%= model_class.human_attribute_name(:shipped_on) %></th>
+      <th><%= model_class.human_attribute_name(:tracking) %></th>
+      <th><%= model_class.human_attribute_name(:ship_notes) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_name) %></th>
+      <th><%= model_class.human_attribute_name(:req_ship_method_code) %></th>
+      <th><%= model_class.human_attribute_name(:req_ship_method_price) %></th>
+      <th><%= model_class.human_attribute_name(:tracking_sent) %></th>
+      <th><%= model_class.human_attribute_name(:originator_notified) %></th>
+      <th><%= model_class.human_attribute_name(:originator) %></th>
+      <th><%= model_class.human_attribute_name(:originator_id) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:public_note) %></th>
+      <th><%= model_class.human_attribute_name(:gift) %></th>
+      <th><%= model_class.human_attribute_name(:billed) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= link_to order.id, order_path(order) %></td>
+        <td><%= order.order_orig %></td>
+        <td><%= order.shipping_company %></td>
+        <td><%= order.shipping_address_1 %></td>
+        <td><%= order.shipping_address_2 %></td>
+        <td><%= order.shipping_city %></td>
+        <td><%= order.shipping_state %></td>
+        <td><%= order.shipping_zip %></td>
+        <td><%= order.shipping_country %></td>
+        <td><%= order.shipping_phone %></td>
+        <td><%= order.email %></td>
+        <td><%= order.ship_method %></td>
+        <td><%= order.ship_actual_cost %></td>
+        <td><%= order.shipped_on %></td>
+        <td><%= order.tracking %></td>
+        <td><%= order.ship_notes %></td>
+        <td><%= order.shipping_name %></td>
+        <td><%= order.req_ship_method_code %></td>
+        <td><%= order.req_ship_method_price %></td>
+        <td><%= order.tracking_sent %></td>
+        <td><%= order.originator_notified %></td>
+        <td><%= order.originator %></td>
+        <td><%= order.originator_id %></td>
+        <td><%= order.status %></td>
+        <td><%= order.public_note %></td>
+        <td><%= order.gift %></td>
+        <td><%= order.billed %></td>
+        <td><%=l DateTime.parse(order.created_at) %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_order_path(order), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      order_path(order),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_order_path,
+            :class => 'btn btn-primary' %>
