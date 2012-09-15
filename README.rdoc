@@ -1,13 +1,13 @@
 == Whiplash Merchandising Example App
 
-This is a fully functional Rails 3.2 app connecting to your existing Whiplash Merchandising account. Currently, you can access Orders and Inventory.
+This is a fully functional Rails 3.2 (requires ruby > 1.9.2) app connecting to your existing Whiplash Merchandising account. Currently, you can access Orders and Items.
 
 
 == Installation
 
 Either fork the project, or simply download the source code.
 
-In `app/models/orders.rb` set
+In `app/models/whiplash.rb` set
 
 	self.settings = {'X-API-KEY' => 'XXXXXXXXX' }
 
